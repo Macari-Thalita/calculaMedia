@@ -53,10 +53,17 @@ function gerarAlunos() {
     <div class="elemento">
     <h3 id='mediaaluno${index}'>0</h3>
     </div>
-    
     </div>`
   });
-
   document.querySelector('#result').innerHTML = listaInputs.join('');
   document.getElementById('botaoMedia').style = 'display: inline';
+  
+  const inputsExemplo = document.getElementsByTagName('input');
+    for (const input of inputsExemplo) {
+      input.addEventListener('change', () => {
+        input.value = input.value.replace(',', '.');
+      }
+     )
+    }
+  
 }
